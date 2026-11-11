@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Niño Vincent Padama is a Senior SEO Specialist, Digital Marketing Specialist, and Web Developer specializing in technical SEO, local SEO, Google Ads, and website optimization.">
+  <meta name="robots" content="index, follow">
+  <title>Niño Vincent Padama | Senior SEO Specialist</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Niño Vincent Padama | Senior SEO Specialist">
+  <meta property="og:description" content="Technical SEO, Local SEO, Google Ads, and Website Optimization.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f9fafc;
+      --surface: #ffffff;
+      --surface-alt: #f0f4f9;
+      --text: #111827;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --nav-bg: rgba(249,250,252,.92);
+      --shadow: 0 12px 40px rgba(15,23,42,.05);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1220;
+      --surface: #111c2e;
+      --surface-alt: #162338;
+      --text: #f1f5f9;
+      --muted: #a3b1c5;
+      --border: #29374b;
+      --accent: #60a5fa;
+      --accent-soft: #1e3656;
+      --nav-bg: rgba(11,18,32,.92);
+      --shadow: 0 12px 40px rgba(0,0,0,.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      transition: background .25s, color .25s;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    h1,h2,h3,h4 {
+      font-family: Manrope, sans-serif;
+      line-height: 1.2;
+      letter-spacing: -.035em;
+    }
+    p { margin: 0 0 1rem; }
+    h2 { font-size: clamp(2rem,4vw,3rem); margin: 0 0 1.2rem; }
+    h3 { margin: 0 0 .65rem; }
+
+    .container {
+      width: min(1120px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: Manrope, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -.08em;
+    }
+
+    .logo span, .accent { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .icon-button {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+    }
+
+    .menu-toggle { display: none; }
+
+    .hero {
+      padding: 130px 0 125px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -200px;
+      top: 0;
+      background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+      pointer-events: none;
+      opacity: .65;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.3rem, 8vw, 6.5rem);
+      letter-spacing: -.075em;
+      margin: 0 0 24px;
+      max-width: 850px;
+    }
+
+    .hero .role {
+      font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero .intro {
+      max-width: 680px;
+      font-size: 1.12rem;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 23px;
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-outline { border: 1px solid var(--border); background: var(--surface); }
+
+    section { padding: 95px 0; scroll-margin-top: 80px; }
+    .section-alt { background: var(--surface-alt); }
+
+    .section-intro {
+      max-width: 680px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .about-grid p { color: var(--muted); }
+
+    .about-card {
+      background: var(--surface);
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card .fact { margin-bottom: 22px; }
+    .about-card .fact:last-child { margin-bottom: 0; }
+
+    .fact small {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+      margin-bottom: 3px;
+    }
+
+    .fact strong { font-size: 1rem; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 18px;
+      transition: transform .25s, border-color .25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .skill-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .skill-card h3 { font-size: 1.08rem; }
+    .skill-card p { font-size: .91rem; color: var(--muted); margin: 0; }
+
+    .experience {
+      border-left: 2px solid var(--border);
+      padding-left: 35px;
+      position: relative;
+      max-width: 900px;
+    }
+
+    .experience::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .experience .date {
+      color: var(--accent);
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .experience .location { color: var(--muted); margin-bottom: 24px; }
+
+    .experience ul { padding-left: 19px; color: var(--muted); }
+    .experience li { padding-left: 4px; margin-bottom: 12px; }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 28px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .step-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      opacity: .8;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .step p { color: var(--muted); font-size: .9rem; }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .education-card {
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .education-card h3 { margin-bottom: 12px; }
+    .education-card p { color: var(--muted); }
+
+    .training-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .training-item:last-child { border-bottom: 0; }
+    .training-item strong { display: block; }
+    .training-item small { color: var(--muted); }
+
+    .contact {
+      text-align: center;
+      padding: 110px 0;
+    }
+
+    .contact h2 { font-size: clamp(2.5rem,5vw,4rem); }
+    .contact p { color: var(--muted); max-width: 550px; margin: auto; }
+    .contact .actions { justify-content: center; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 26px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .footer-inner a:hover { color: var(--accent); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .skills-grid { grid-template-columns: repeat(2,1fr); }
+      .approach-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(100% - 36px,1120px); }
+      .nav-inner { min-height: 68px; }
+      .menu-toggle { display: grid; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .nav-links.open { display: flex; }
+      .hero { padding: 90px 0; }
+      section { padding: 70px 0; }
+      .skills-grid, .approach-grid, .education-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(3rem, 13vw, 5rem); }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="Home">NV<span>.</span></a>
+
+      <nav id="navigation" class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#approach">Approach</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle dark mode" aria-pressed="false">☾</button>
+        <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="eyebrow">Hello, I'm</div>
+        <h1>Niño Vincent<br>Padama<span class="accent">.</span></h1>
+        <div class="role">Senior SEO Specialist · Digital Marketing Specialist · Web Developer</div>
+        <p class="intro">
+          I help businesses improve their online visibility through
+          technical SEO, local search optimization, Google Ads,
+          and performance-focused website development.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#about">Explore My Portfolio ↗</a>
+          <a class="btn btn-outline" href="mailto:mtd.vince@gmail.com">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-alt">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="eyebrow">01 / About Me</div>
+          <h2>Building better digital experiences through search and technology.</h2>
+          <p>
+            I'm a Philippines-based Senior SEO Specialist with experience
+            supporting US businesses through search engine optimization,
+            paid search advertising, and website development.
+          </p>
+          <p>
+            My work covers technical audits, keyword research, local SEO,
+            website architecture, landing page optimization, and
+            conversion tracking.
+          </p>
+          <p>
+            I combine technical understanding with digital marketing
+            strategy to create websites that are discoverable,
+            user-friendly, and built for conversions.
+          </p>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="fact">
+            <small>Current Position</small>
+            <strong>Senior SEO Specialist</strong>
+          </div>
+          <div class="fact">
+            <small>Company</small>
+            <strong>D Tech Clinic</strong>
+          </div>
+          <div class="fact">
+            <small>Work Arrangement</small>
+            <strong>Remote · Tampa, Florida</strong>
+          </div>
+          <div class="fact">
+            <small>Based In</small>
+            <strong>Philippines</strong>
+          </div>
+          <div class="fact">
+            <small>Specialization</small>
+            <strong>SEO · PPC · Website Optimization</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="eyebrow">02 / Expertise</div>
+        <h2>What I specialize in.</h2>
+        <p class="section-intro">
+          A combination of technical SEO, digital marketing,
+          analytics, and website development skills.
+        </p>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">01</div>
+            <h3>Technical SEO</h3>
+            <p>Technical audits, crawlability, indexing, website structure, internal linking, and on-page improvements.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">02</div>
+            <h3>Local SEO</h3>
+            <p>Google Business Profile optimization, location pages, local keyword research, and local search visibility.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">03</div>
+            <h3>Google Ads & PPC</h3>
+            <p>Search campaign management, keyword targeting, ad copy, negative keywords, and campaign optimization.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">04</div>
+            <h3>Website Development</h3>
+            <p>Website customization, HTML, CSS, responsive layouts, WordPress, and conversion-focused landing pages.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">05</div>
+            <h3>Analytics & Tracking</h3>
+            <p>Google Analytics 4, Google Search Console, Google Tag Manager, and conversion tracking implementation.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">06</div>
+            <h3>Content Optimization</h3>
+            <p>Keyword research, competitor analysis, content planning, service pages, and search-intent optimization.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section-alt">
+      <div class="container">
+        <div class="eyebrow">03 / Experience</div>
+        <h2>Professional experience.</h2>
+
+        <article class="experience reveal">
+          <div class="date">March 2023 — Present</div>
+          <h3>D Tech Clinic — Senior SEO Specialist</h3>
+          <p class="location">Remote · Tampa, Florida, United States</p>
+          <ul>
+            <li>Develop and execute SEO strategies to improve organic search visibility and local rankings.</li>
+            <li>Perform technical SEO audits, keyword research, competitor analysis, and on-page optimization.</li>
+            <li>Create and optimize service pages, location landing pages, and website content.</li>
+            <li>Improve website architecture, internal linking, crawlability, and indexing.</li>
+            <li>Manage Google Ads campaigns, including keyword targeting, ad copy, and negative keywords.</li>
+            <li>Configure and troubleshoot conversion tracking using Google Tag Manager and Google Analytics 4.</li>
+            <li>Develop, customize, and optimize websites and landing pages for user experience and conversions.</li>
+            <li>Monitor organic performance, search rankings, and advertising campaign results.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container">
+        <div class="eyebrow">04 / My Approach</div>
+        <h2>How I approach digital growth.</h2>
+        <p class="section-intro">
+          A practical workflow that connects technical improvements,
+          search visibility, and business goals.
+        </p>
+
+        <div class="approach-grid">
+          <article class="step reveal">
+            <div class="step-number">01</div>
+            <h3>Analyze</h3>
+            <p>Understand the website, target audience, competitors, and current search performance.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-number">02</div>
+            <h3>Strategize</h3>
+            <p>Identify opportunities, prioritize improvements, and develop an actionable optimization plan.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-number">03</div>
+            <h3>Implement</h3>
+            <p>Improve technical SEO, content, landing pages, tracking, and advertising campaigns.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-number">04</div>
+            <h3>Optimize</h3>
+            <p>Measure performance, evaluate results, and refine the strategy using reliable data.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section-alt">
+      <div class="container">
+        <div class="eyebrow">05 / Background</div>
+        <h2>Education & professional training.</h2>
+
+        <div class="education-grid">
+          <article class="education-card reveal">
+            <h3>Education</h3>
+            <strong>Bachelor of Science in Information Technology</strong>
+            <p>Lorma Colleges<br>2007 – 2011</p>
+          </article>
+
+          <article class="education-card reveal">
+            <h3>Professional Training</h3>
+            <div class="training-item">
+              <strong>SEO / Content Writing Training</strong>
+              <small>PROVA · January 2020</small>
+            </div>
+            <div class="training-item">
+              <strong>WordPress Developer Training</strong>
+              <small>PROVA · January 2020</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container reveal">
+        <div class="eyebrow">06 / Contact</div>
+        <h2>Let's connect<span class="accent">.</span></h2>
+        <p>
+          Interested in discussing SEO, digital marketing,
+          website optimization, or a professional opportunity?
+          I'd be happy to connect.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:mtd.vince@gmail.com">Email Me ↗</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/nvrp/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Niño Vincent Padama. All rights reserved.</span>
+      <span>Designed with purpose. Built for performance.</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const themeButton = document.getElementById("theme-toggle");
+    const menuButton = document.getElementById("menu-toggle");
+    const navigation = document.getElementById("navigation");
+
+    function setTheme(theme) {
+      root.dataset.theme = theme;
+      themeButton.textContent = theme === "dark" ? "☀" : "☾";
+      themeButton.setAttribute("aria-pressed", String(theme === "dark"));
+      themeButton.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+    }
+
+    setTheme("dark");
+
+    themeButton.addEventListener("click", () => {
+      setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+    });
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    if ("IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
